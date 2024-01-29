@@ -1,9 +1,5 @@
-{{ include ".template-helper-functions" -}}
-{{ if env.variant == "alpine" then ( -}}
-FROM alpine:{{ .alpine.version }}
-{{ ) else ( -}}
-FROM debian:{{ .debian.version }}-slim
-{{ ) end -}}
+FROM alpine:latest
+
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 {{ if env.variant == "alpine" then ( -}}
